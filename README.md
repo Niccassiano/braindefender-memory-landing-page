@@ -1,4 +1,4 @@
-# BrainDefender Memória Nova 2.0
+# BrainDefender Memória
 
 Landing page desenvolvida para apresentação e conversão do produto BrainDefender.
 
