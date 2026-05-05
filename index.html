@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainDefender - Start restoring your memory today</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>Brain<span style="color: #FEC111">Defender</span></h1>
+            </div>
+            <div class="header-cta">
+                <span class="cta-text">Start restoring your memory today</span>
+                <a href="#pricing-section" class="btn btn-primary">Order Now</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-text-container">
+                <span class="welcome-text">Master Your Mind:</span>
+                <h1 class="hero-title">The Ultimate Guide to Memory <span style="color: #FEC111">and Focus Enhancement</span></h1>
+            </div>
+
+            <div class="video-container">
+                <div style="position: relative; width: 100%">
+                <!-- Trocar link VSL abaixo -->
+                <div
+                    id="vid_682285bb4c8eb693158595d4"
+                    style="position: relative; width: 100%; padding: 56.25% 0 0"
+                >
+                    <img
+                    id="thumb_682285bb4c8eb693158595d4"
+                    src="https://images.converteai.net/74b04062-0d4e-4f42-a29e-66a4faa4b9d0/players/682285bb4c8eb693158595d4/thumbnail.jpg"
+                    style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                    "
+                    alt="thumbnail"
+                    />
+                    <div
+                    id="backdrop_682285bb4c8eb693158595d4"
+                    style="
+                        -webkit-backdrop-filter: blur(5px);
+                        backdrop-filter: blur(5px);
+                        position: absolute;
+                        top: 0;
+                        height: 100%;
+                        width: 100%;
+                    "
+                    ></div>
+                </div>
+
+
+                <script type="text/javascript" id="scr_682285bb4c8eb693158595d4">
+                    var s = document.createElement("script");
+                    (s.src =
+                    "https://scripts.converteai.net/74b04062-0d4e-4f42-a29e-66a4faa4b9d0/players/682285bb4c8eb693158595d4/player.js"),
+                    (s.async = !0),
+                    document.head.appendChild(s);
+                </script>
+
+
+                <!-- Trocar link VSL acima -->
+
+
+                <style>
+                    .esconder {
+                    display: none;
+                    }
+                    .cronometro {
+                    font-size: 50px;
+                    font-weight: bold;
+                    text-align: center;
+                    color: #fff;
+                    }
+                    .bt {
+                    background: linear-gradient(to bottom, #ff9c00 52%, #ad6a00 52%);
+                    padding: 15px 40px;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    font-family: inherit;
+                    cursor: pointer;
+                    max-width: 100%;
+                    line-height: 1.7em;
+                    text-align: center;
+                    }
+                    .bt:hover {
+                    scale: 1.1;
+                    }
+                </style>
+
+
+                <script type="text/javascript">
+                    document.addEventListener("DOMContentLoaded", function () {
+                    /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+                    var SECONDS_TO_DISPLAY = 1399;
+                    var CLASS_TO_DISPLAY = ".esconder";
+
+
+                    /* Tempo inicial do cronômetro (em segundos) = 30 minutos */
+                    var countdownTime1 = 30 * 60;
+                    var countdownTime2 = 30 * 60;
+                    var countdownTime3 = 30 * 60;
+                    var countdownTime4 = 30 * 60;
+
+
+                    /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+                    var attempts = 0;
+                    var elsHiddenList = [];
+                    var elsDisplayed = false;
+                    var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+                    var alreadyDisplayedKey =
+                        "alreadyElsDisplayed" + SECONDS_TO_DISPLAY;
+                    var alreadyElsDisplayed =
+                        localStorage.getItem(alreadyDisplayedKey);
+
+
+                    setTimeout(function () {
+                        elsHiddenList = Array.prototype.slice.call(elsHidden);
+                    }, 0);
+
+
+                    var showHiddenElements = function () {
+                        elsDisplayed = true;
+                        elsHiddenList.forEach((e) => (e.style.display = "block"));
+                        localStorage.setItem(alreadyDisplayedKey, true);
+                        startCountdown1(); // Inicia o cronômetro 1
+                        startCountdown2(); // Inicia o cronômetro 2
+                        startCountdown3(); // Inicia o cronômetro 3
+                        startCountdown4(); // Inicia o cronômetro 4
+                    };
+
+
+                    var startWatchVideoProgress = function () {
+                        if (
+                        typeof smartplayer === "undefined" ||
+                        !(smartplayer.instances && smartplayer.instances.length)
+                        ) {
+                        if (attempts >= 10) return;
+                        attempts += 1;
+                        return setTimeout(function () {
+                            startWatchVideoProgress();
+                        }, 1000);
+                        }
+
+
+                        smartplayer.instances[0].on("timeupdate", () => {
+                        if (elsDisplayed || smartplayer.instances[0].smartAutoPlay)
+                            return;
+                        if (
+                            smartplayer.instances[0].video.currentTime <
+                            SECONDS_TO_DISPLAY
+                        )
+                            return;
+                        showHiddenElements();
+                        });
+                    };
+
+
+                    if (alreadyElsDisplayed === "true") {
+                        setTimeout(function () {
+                        showHiddenElements();
+                        }, 100);
+                    } else {
+                        startWatchVideoProgress();
+                    }
+
+
+                    /* Função que formata o tempo no formato mm:ss */
+                    function formatTime(seconds) {
+                        var minutes = Math.floor(seconds / 60);
+                        var secs = seconds % 60;
+                        return (
+                        (minutes < 10 ? "0" + minutes : minutes) +
+                        ":" +
+                        (secs < 10 ? "0" + secs : secs)
+                        );
+                    }
+
+
+                    /* Função que inicia o cronômetro 1 */
+                    function startCountdown1() {
+                        var cronometroDisplay = document.getElementById("cronometro1");
+                        var interval = setInterval(function () {
+                        countdownTime1--;
+                        cronometroDisplay.textContent = formatTime(countdownTime1);
+
+
+                        if (countdownTime1 <= 0) {
+                            clearInterval(interval);
+                            cronometroDisplay.textContent = "Tempo Esgotado!";
+                        }
+                        }, 1000); // Atualiza a cada segundo
+                    }
+
+
+                    /* Função que inicia o cronômetro 2 */
+                    function startCountdown2() {
+                        var cronometroDisplay = document.getElementById("cronometro2");
+                        var interval = setInterval(function () {
+                        countdownTime2--;
+                        cronometroDisplay.textContent = formatTime(countdownTime2);
+
+
+                        if (countdownTime2 <= 0) {
+                            clearInterval(interval);
+                            cronometroDisplay.textContent = "Tempo Esgotado!";
+                        }
+                        }, 1000);
+                    }
+
+
+                    /* Função que inicia o cronômetro 3 */
+                    function startCountdown3() {
+                        var cronometroDisplay = document.getElementById("cronometro3");
+                        var interval = setInterval(function () {
+                        countdownTime3--;
+                        cronometroDisplay.textContent = formatTime(countdownTime3);
+
+
+                        if (countdownTime3 <= 0) {
+                            clearInterval(interval);
+                            cronometroDisplay.textContent = "Tempo Esgotado!";
+                        }
+                        }, 1000);
+                    }
+
+
+                    /* Função que inicia o cronômetro 4 */
+                    function startCountdown4() {
+                        var cronometroDisplay = document.getElementById("cronometro4");
+                        var interval = setInterval(function () {
+                        countdownTime4--;
+                        cronometroDisplay.textContent = formatTime(countdownTime4);
+
+
+                        if (countdownTime4 <= 0) {
+                            clearInterval(interval);
+                            cronometroDisplay.textContent = "Tempo Esgotado!";
+                        }
+                        }, 1000);
+                    }
+                    });
+                </script>
+
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                    const counterElement = document.getElementById("watching-now");
+                    let count = 509;
+
+
+                    setInterval(function () {
+                        count++;
+                        counterElement.textContent = count;
+                    }, 1500);
+                    });
+                </script>
+            </div>
+                </div>
+        </section>
+
+        <div class="hero-buttons"> 
+            </div>
+          <img src="news-logos.webp" alt="Logo">
+          </div>
+
+
+        </section>
+    </main>
+
+<section class="services-section">
+    <div class="container">
+        <div class="service-card">
+            <div class="card-content">
+                <div class="icon-container">
+                    <img src="1f9e0.png" alt="Boost Memory Retention" class="card-icon">
+                </div>
+                <h3 class="card-title">Boost Memory Retention</h3>
+                <p class="card-description">BrainDefender helps strengthen your memory, making it easier to retain and recall important information every day.</p>
+            </div>
+            <div class="card-image-circle">
+                <img src="portrait-woman-office-prepared-summer-holiday.jpg" alt="Boost Memory Retention image" class="circle-image">
+            </div>
+        </div>
+
+        <div class="service-card active-card">
+            <div class="card-content">
+                <div class="icon-container">
+                    <img src="Velocidade.png" alt="Improve Focus & Clarity" class="card-icon">
+                </div>
+                <h3 class="card-title">Improve Focus & Clarity</h3>
+                <p class="card-description">Enhances concentration and mental sharpness, so you can stay focused longer and think more clearly.</p>
+            </div>
+            <div class="card-image-circle">
+                <img src="female-executive-reading-sticky-notes.jpg" alt="Improve Focus & Clarity image" class="circle-image">
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="card-content">
+                <div class="icon-container">
+                    <img src="1f319.png" alt="Support Mental Energy & Relaxation" class="card-icon">
+                </div>
+                <h3 class="card-title">Energy & Relaxation</h3>
+                <p class="card-description">Promotes balanced energy throughout the day while also supporting relaxation for a healthier, calmer mind.</p>
+            </div>
+            <div class="card-image-circle">
+                <img src="SharedScreenshot.jpg" alt="Support Mental Energy & Relaxation image" class="circle-image">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing-section" id="pricing-section">
+    <div class="container">
+        <div class="pricing-header">
+            <h2>Find the Perfect<br/>Solution for Your Memory & Focus Journey</h2>
+            <p>
+                Whether you struggle with forgetfulness, lack of concentration, or mental fatigue,
+                <span class="highlight">BrainDefender</span> helps you boost memory, sharpen focus, and protect your mind for lasting results.
+            </p>
+            <div class="reviews">
+                <span class="stars">★★★★★</span>
+                <button class="btn-reviews">Our customers say</button>
+            </div>
+        </div>
+
+        <div class="pricing-cards-container">
+            <div class="pricing-card lower-offer">
+                <div class="card-content">
+                    <h3>Basic</h3>
+                    <p class="plan-details">2 BOTTLE<br />60 Day Supply</p>
+                    <div class="price-box">
+                        <span class="currency">$</span>
+                        <span class="price">79</span>
+                        <span class="unit">/bottle</span>
+                    </div>
+                    <img
+                        src="img-2-bottles.webp"
+                        alt="Descrição da imagem do plano Basic"
+                        class="plan-image"
+                    />
+                    <ul class="features-list">
+                        <li><span>✔</span> FREE SHIPPING!</li>
+                    </ul>
+                    <a href="https://atlls.SEUDOMINIOAQUI.com/click/1" class="btn-buy">Buy Now</a>
+                    <div class="payment-logos">
+                        <img
+                            src="visa-mastercard-discover-png-visa-mastercard-american-express-discover-11562884670gyxaij59my-removebg-preview (1).png"
+                            alt="Accepted payment methods"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-card featured-card">
+                <div class="card-content">
+                    <div class="ribbon">Most Popular</div>
+                    <p class="plan-details">6 BOTTLES<br />180 Day Supply</p>
+                    <div class="price-box">
+                        <span class="currency">$</span>
+                        <span class="price">49</span>
+                        <span class="unit">/bottle</span>
+                    </div>
+                    <img
+                        src="image-removebg-preview - 6 BOTTLES.png"
+                        alt="Descrição da imagem do plano Most Popular"
+                        class="plan-image"
+                    />
+                    <ul class="features-list">
+                        <li><span>✔</span> FREE SHIPPING!</li>
+                        <li><span>✔</span> 60-DAY GUARANTEE!</li>
+                    </ul>
+                    <a href="https://atlls.SEUDOMINIOAQUI.com/click/3" class="btn-buy featured-btn">Buy Now</a>
+                    <div class="payment-logos">
+                        <img
+                            src="visa-mastercard-discover-png-visa-mastercard-american-express-discover-11562884670gyxaij59my-removebg-preview (1).png"
+                            alt="Accepted payment methods"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-card">
+                <div class="card-content">
+                    <h3>Bundle</h3>
+                    <p class="plan-details">3 BOTTLES<br />90 Day Supply</p>
+                    <div class="price-box">
+                        <span class="currency">$</span>
+                        <span class="price">69</span>
+                        <span class="unit">/bottle</span>
+                    </div>
+                    <img
+                        src="img-3-bottles.webp"
+                        alt="Descrição da imagem do plano Bundle"
+                        class="plan-image"
+                    />
+                    <ul class="features-list">
+                        <li><span>✔</span> FREE SHIPPING!</li>
+                        <li><span>✔</span> 60-DAY GUARANTEE!</li>
+                    </ul>
+                    <a href="https://atlls.SEUDOMINIOAQUI.com/click/2" class="btn-buy">Buy Now</a>
+                    <div class="payment-logos">
+                        <img
+                            src="visa-mastercard-discover-png-visa-mastercard-american-express-discover-11562884670gyxaij59my-removebg-preview (1).png"
+                            alt="Accepted payment methods"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="call-to-action-section" style="background-image: url('BrainDefender\ +\ Natureza.png');">
+    <div class="call-to-action-overlay">
+        <div class="container">
+            <p class="cta-welcome-text">Sharper Mind, Stronger Memory</p>
+            <h2 class="cta-title">Unlock Your Full Potential with BrainDefender</h2>
+            <a href="#pricing-section" class="cta-button-link">
+            <button class="cta-button">Order Now!</button></a>
+        </div>
+    </div>
+</section>
+
+<section class="approach-values-section">
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="approach-column">
+                <h2 class="section-title">What Is BrainDefender?</h2>
+                <p class="section-description">
+                    BrainDefender is more than a supplement; it's an advanced solution designed to support your brain's health and performance. In a world where information moves at a constant speed, maintaining mental clarity and a sharp memory can be a challenge. This is where BrainDefender comes in, offering a clinically optimized formula to nourish and protect your brain from the inside out.
+                </p>
+                <div class="metrics-container">
+                    <div class="metric-card">
+                        <img src="2714.png" alt="Icon" class="metric-icon">
+                        <h3 class="metric-number">99%</h3>
+                        <p class="metric-label">Customer satisfaction</p>
+                    </div>
+                    <div class="metric-card">
+                        <img src="1f331.png" alt="Icon" class="metric-icon">
+                        <h3 class="metric-number">100%</h3>
+                        <p class="metric-label">Natural Product</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="values-column">
+                <h2 class="section-title">How Does BrainDefender Help You?</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">Enhances Memory and Retention</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>The product is formulated to strengthen neural connections, making it easier to recall important information and retain new knowledge. Say goodbye to those "on the tip of my tongue" moments.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item active">
+                        <button class="accordion-header">
+                            <span class="accordion-title">Supercharges Focus and Concentration</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Amidst distractions, staying focused on a single task can be difficult. BrainDefender helps to increase your focus, allowing you to concentrate for longer periods, whether at work, during studies, or on personal projects.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">Improves Communication and Logical Reasoning</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>With a clearer mind and a sharper memory, you can articulate thoughts with greater fluidity. This translates into more effective communication and the ability to solve problems and make decisions more quickly and logically.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">Offers Long-Term Brain Health Support</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Beyond the immediate benefits, BrainDefender contains antioxidants and essential nutrients that help protect your brain from oxidative stress, contributing to its health and vitality throughout the years. It's an investment in the future of your mind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+
+<section class="testimonials-section">
+    <div class="testimonials-container">
+        <div class="testimonials-header">
+            <span class="section-tag">TESTIMONIALS</span>
+            <h2 class="section-title-white">What Clients say about us</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="card-author">
+                    <img src="portrait-woman-with-arms-crossed.jpg" alt="Anna" class="author-photo">
+                    <div class="author-info">
+                        <h4 class="author-name">Anna P.</h4>
+                    </div>
+                </div>
+                <p class="testimonial-text">"I've always had trouble concentrating at work, and my memory wasn't what it used to be. After starting to use BrainDefender, my mind feels so much clearer, and I can focus on tasks for much longer. It's been an incredible change!"</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="card-author">
+                    <img src="portrait-business-man-wearing-formal-suit.jpg" alt="Mark" class="author-photo">
+                    <div class="author-info">
+                        <h4 class="author-name">Mark G.</h4>
+                    </div>
+                </div>
+                <p class="testimonial-text">"I'm a college student and I need a sharp memory for my exams. BrainDefender helped me retain information more easily and gave me faster logical reasoning. I highly recommend it for anyone who wants a boost in their studies."</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="card-author">
+                    <img src="middle-aged-woman-portrait-with-skin-cancer.jpg" alt="Lucy" class="author-photo">
+                    <div class="author-info">
+                        <h4 class="author-name">Lucy F.</h4>
+                    </div>
+                </div>
+                <p class="testimonial-text">"As I've gotten older, I started to worry about my memory. BrainDefender has given me a sense of security. I feel like my mind is more protected and agile. It's my secret to staying active and sharp."</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="card-author">
+                    <img src="senior-man-contemplating-sea.jpg" alt="John" class="author-photo">
+                    <div class="author-info">
+                        <h4 class="author-name">John V.</h4>
+                    </div>
+                </div>
+                <p class="testimonial-text">"I've noticed a significant improvement in my communication. Words come to me more easily and my thoughts are more organized. It's not just about memory; it's about day-to-day mental clarity. Excellent product!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="guarantee-section">
+    <div class="container">
+        <div class="guarantee-content-wrapper">
+            <div class="guarantee-text-column">
+                <h2 class="guarantee-title">Experience the BrainDefender Difference,<br>Risk-Free!</h2>
+                <p class="guarantee-description">
+                    We are so confident that BrainDefender will improve your memory, focus, and overall brain health that we offer a comprehensive 60-Day Money-Back Guarantee.
+                </p>
+                <a href="#pricing-section" class="btn-explore">Get Yours Now, Risk-Free!</a>
+            </div>
+            <div class="guarantee-image-column">
+                <img src="1 Bottles + Certificado de garantia - BrainDefender.png" alt="imagem de garantia" class="guarantee-image">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="pricing-section" id="pricing-section">
+    <div class="container">
+        <div class="pricing-header">
+            <h2>Find the Perfect<br/>Solution for Your Memory & Focus Journey</h2>
+            <p>
+                Whether you struggle with forgetfulness, lack of concentration, or mental fatigue,
+                <span class="highlight">BrainDefender</span> helps you boost memory, sharpen focus, and protect your mind for lasting results.
+            </p>
+            <div class="reviews">
+                <span class="stars">★★★★★</span>
+                <button class="btn-reviews">Our customers say</button>
+            </div>
+        </div>
+
+        <div class="pricing-cards-container">
+            <div class="pricing-card lower-offer">
+                <div class="card-content">
+                    <h3>Basic</h3>
+                    <p class="plan-details">2 BOTTLE<br />60 Day Supply</p>
+                    <div class="price-box">
+                        <span class="currency">$</span>
+                        <span class="price">79</span>
+                        <span class="unit">/bottle</span>
+                    </div>
+                    <img
+                        src="img-2-bottles.webp"
+                        alt="Descrição da imagem do plano Basic"
+                        class="plan-image"
+                    />
+                    <ul class="features-list">
+                        <li><span>✔</span> FREE SHIPPING!</li>
+                    </ul>
+                    <a href="https://atlls.SEUDOMINIOAQUI.com/click/1" class="btn-buy">Buy Now</a>
+                    <div class="payment-logos">
+                        <img
+                            src="visa-mastercard-discover-png-visa-mastercard-american-express-discover-11562884670gyxaij59my-removebg-preview (1).png"
+                            alt="Accepted payment methods"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-card featured-card">
+                <div class="card-content">
+                    <div class="ribbon">Most Popular</div>
+                    <p class="plan-details">6 BOTTLES<br />180 Day Supply</p>
+                    <div class="price-box">
+                        <span class="currency">$</span>
+                        <span class="price">49</span>
+                        <span class="unit">/bottle</span>
+                    </div>
+                    <img
+                        src="image-removebg-preview - 6 BOTTLES.png"
+                        alt="Descrição da imagem do plano Most Popular"
+                        class="plan-image"
+                    />
+                    <ul class="features-list">
+                        <li><span>✔</span> FREE SHIPPING!</li>
+                        <li><span>✔</span> 60-DAY GUARANTEE!</li>
+                    </ul>
+                    <a href="https://atlls.SEUDOMINIOAQUI.com/click/3" class="btn-buy featured-btn">Buy Now</a>
+                    <div class="payment-logos">
+                        <img
+                            src="visa-mastercard-discover-png-visa-mastercard-american-express-discover-11562884670gyxaij59my-removebg-preview (1).png"
+                            alt="Accepted payment methods"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-card">
+                <div class="card-content">
+                    <h3>Bundle</h3>
+                    <p class="plan-details">3 BOTTLES<br />90 Day Supply</p>
+                    <div class="price-box">
+                        <span class="currency">$</span>
+                        <span class="price">69</span>
+                        <span class="unit">/bottle</span>
+                    </div>
+                    <img
+                        src="img-3-bottles.webp"
+                        alt="Descrição da imagem do plano Bundle"
+                        class="plan-image"
+                    />
+                    <ul class="features-list">
+                        <li><span>✔</span> FREE SHIPPING!</li>
+                        <li><span>✔</span> 60-DAY GUARANTEE!</li>
+                    </ul>
+                    <a href="https://atlls.SEUDOMINIOAQUI.com/click/2" class="btn-buy">Buy Now</a>
+                    <div class="payment-logos">
+                        <img
+                            src="visa-mastercard-discover-png-visa-mastercard-american-express-discover-11562884670gyxaij59my-removebg-preview (1).png"
+                            alt="Accepted payment methods"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-header">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-accordion">
+            <div class="faq-item">
+                <button class="faq-header-btn">
+                    <span class="faq-question">What is BrainDefender and what does it do?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>BrainDefender is a powerful brain health supplement designed to improve cognitive functions. It is formulated to enhance memory recall, boost focus, and support long-term brain health by providing essential nutrients.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-header-btn">
+                    <span class="faq-question">How long does it take to see results?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>Many users report feeling a noticeable difference in focus and mental clarity within the first few weeks of consistent use. For more significant improvements in memory and long-term benefits, we recommend taking BrainDefender daily for at least 60 days.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-header-btn">
+                    <span class="faq-question">Is BrainDefender safe to use?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>Yes, BrainDefender is made with a clinically optimized formula using high-quality, natural ingredients. It's produced in a facility that follows strict quality control standards. We always recommend consulting with your healthcare professional before starting any new supplement, especially if you have pre-existing health conditions.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-header-btn">
+                    <span class="faq-question">How should I use BrainDefender?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>For best results, use the product as directed on the label. Following a consistent routine is key to maximizing the benefits.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-header-btn">
+                    <span class="faq-question">What if it doesn't work for me?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>We are confident in our product, which is why we offer a 60-Day Money-Back Guarantee. If you are not completely satisfied with your results, simply contact us within 60 days of your purchase for a full refund.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-header-btn">
+                    <span class="faq-question">Can I take BrainDefender with my other medications?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>While BrainDefender is made with natural ingredients, it is crucial to consult with your doctor or pharmacist before combining it with other medications to ensure there are no potential interactions.</p>
+                </div>
+            </div>
+        </div>
+       <div class="faq-cta">
+    <a href="#pricing-section" class="cta-btn-faq-link">
+        <button class="cta-btn-faq">Ready to Boost Your Brainpower?</button></a>
+</div>
+</section>
+
+<script src="faq-script.js"></script>
+
+<section class="quote-section">
+    <div class="container">
+        <div class="quote-content">
+            <span class="quote-icon">❝</span>
+            <p class="quote-text">
+                “Don't let your memories fade away. Free your mind's full potential and start building a future filled with clarity, focus, and new memories today.”
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="references-section">
+    <div class="container">
+        <div class="references-header">
+            <h2 class="references-title">Scientific References</h2>
+        </div>
+        <div class="references-grid">
+            <div class="references-column">
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Ginkgo biloba</span> Extract and Cognitive Function in Healthy Adults – <span class="reference-author">Laws KR, et al.</span> (Psychopharmacology, 2012)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Omega-3 Fatty Acids</span> and Age-Related Cognitive Decline – <span class="reference-author">Yurko-Mauro K, et al.</span> (Journal of Health & Aging, 2010)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Bacopa monnieri</span> (Brahmi) and Memory Enhancement: A Meta-Analysis – <span class="reference-author">Pase MP, et al.</span> (Journal of Alternative and Complementary Medicine, 2012)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Curcumin's Neuroprotective Effects</span> Against Cognitive Decline – <span class="reference-author">Ng TP, et al.</span> (American Journal of Geriatric Psychiatry, 2018)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        The Role of <span class="reference-author">Acetyl-L-Carnitine</span> in Cognitive Performance and Neuroprotection – <span class="reference-author">Montgomery SA, et al.</span> (International Clinical Psychopharmacology, 2003)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Panax ginseng</span> and Mental Performance: A Double-Blind Crossover Study – <span class="reference-author">Kennedy DO, et al.</span> (Psychopharmacology, 2001)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Vitamin B12, Folate, and Cognitive Function</span> in Older Adults – <span class="reference-author">Morris MS, et al.</span> (American Journal of Clinical Nutrition, 2012)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Resveratrol and Memory Performance</span> in Older Adults – <span class="reference-author">Witte AV, et al.</span> (Journal of Neuroscience, 2014)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Magnesium Supplementation</span> and Cognitive Function in Aging – <span class="reference-author">Barbagallo M, et al.</span> (Nutrients, 2021)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Caffeine</span> and Cognitive Performance: A Review – <span class="reference-author">Glade MJ.</span> (Nutrition, 2010)
+                    </p>
+                </div>
+            </div>
+            <div class="references-column">
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">L-Theanine Synergy</span> with Caffeine for Attention and Memory – <span class="reference-author">Haskell CF, et al.</span> (Nutritional Neuroscience, 2008)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Dietary Polyphenols</span> and Their Impact on Brain Aging – <span class="reference-author">Vauzour D, et al.</span> (Nutrition Reviews, 2008)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Phosphatidylserine Supplementation</span> and Memory Function in the Elderly – <span class="reference-author">Crook TH, et al.</span> (Neurology, 1991)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Flavonoid-Rich Blueberry Supplementation</span> Improves Memory in Older Adults – <span class="reference-author">Krikorian R, et al.</span> (Journal of Agricultural and Food Chemistry, 2010)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Coenzyme Q10</span> and Mitochondrial Support in Neurodegenerative Diseases – <span class="reference-author">Spindler M, et al.</span> (Neurochemical Research, 2009)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Vitamin D and Cognitive Decline</span>: Systematic Review – <span class="reference-author">Annweiler C, et al.</span> (Journal of Alzheimer’s Disease, 2013)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Green Tea Catechins</span> and Brain Function – <span class="reference-author">Ide K, et al.</span> (Journal of Nutritional Biochemistry, 2014)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Choline and Memory Performance</span> in Older Adults – <span class="reference-author">Poly C, et al.</span> (American Journal of Clinical Nutrition, 2011)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">The Gut-Brain Axis</span>: Probiotics and Cognitive Health – <span class="reference-author">Wang HX, et al.</span> (Current Alzheimer Research, 2016)
+                    </p>
+                </div>
+                <div class="reference-item">
+                    <p class="reference-text">
+                        <span class="reference-author">Adaptogens</span> and Stress-Related Cognitive Impairment – <span class="reference-author">Panossian A, et al.</span> (Phytomedicine, 2010)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+      <div class="footer-container">
+        <hr class="footer-divider" />
+        <div class="footer-links">
+          <a href="terms.html" target="_blank"
+            >Terms Of Service</a
+          >
+          <a href="privacy.html" target="_blank">Privacy</a>
+          <a href="disclaimer.html" target="_blank"
+            >Disclaimer</a
+          >
+          <a href="contact.html" target="_blank">Contact</a>
+        </div>
+        <div class="footer-text">
+          <p>
+            These products are not intended to diagnose, treat, cure or prevent
+            any disease. If you are pregnant, nursing, taking medication, or
+            have any health condition, consult your doctor before using our
+            products.
+          </p>
+          <p>
+            The information provided is not intended to replace consultation
+            with a qualified medical professional. We encourage you to inform
+            your doctor about any dietary changes you make and discuss them with
+            him or her. For any questions or concerns about medical conditions
+            you may have, please contact your doctor.
+          </p>
+          <p>
+            We want to confirm that we are not diagnosing or prescribing. We
+            disclaim all responsibility for how you use or interpret the
+            content. This is for demonstration only. Contact your doctor for any
+            questions about your health or medical conditions.
+          </p>
+        </div>
+        <p class="footer-copyright">©2025 BrainDefender</p>
+      </div>
+    </footer>
+
+
+
+
+    <!-- Script VTURB Sakurai -->
+    <script>
+      function getParameterByName(name) {
+        const url = window.location.href;
+        const nameRegex = name.replace(/[[\]]/g, "\\$&");
+        const regex = new RegExp("[?&]" + nameRegex + "(=([^&#]*)|&|#|$)");
+        const results = regex.exec(url);
+        return results && results[2]
+          ? decodeURIComponent(results[2].replace(/\+/g, " "))
+          : null;
+      }
+
+      function sendPostback(url) {
+        fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            console.log(`Postback sent: ${url}`);
+          })
+          .catch((error) =>
+            console.error(`Error sending postback: ${error.message}`)
+          );
+      }
+
+      function handleVSLViewPostback() {
+        let clickid = getParameterByName("rtkcid");
+        if (!clickid) {
+          clickid = getParameterByName("tid");
+        }
+        if (clickid) {
+          sendPostback(
+            `https://cb4gq.ttrk.io/postback?clickid=${clickid}&type=VSLView`
+          );
+        } else {
+          console.error(
+            'Nenhum parâmetro "rtkcid" ou "tid" encontrado na URL para VSL View'
+          );
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        handleVSLViewPostback();
+      });
+    </script>
+    <!-- Script VTURB Sakurai -->
+
+    <!-- Script Redtrack -->
+
+    <!-- Script Redtrack -->
+
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
